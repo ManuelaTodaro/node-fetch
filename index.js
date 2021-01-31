@@ -20,13 +20,13 @@ const fetch = require("node-fetch")
                 .forEach(elemento=>console.log(elemento.id))
         })
  }
-  function esercizio3(){
+ function esercizio3(){
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res=>res.json())
         .then(data=>{
             data
-                 .filter(elemento=>elemento.title %2===0 )
-                 .forEach(elemento=>console.log(elemento.id))
+                .filter(elemento=> elemento.title.split(" ").length %2 === 0)
+                 .forEach(el => console.log(el.id))
         })
 
   }
